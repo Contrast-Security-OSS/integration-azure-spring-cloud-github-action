@@ -2,7 +2,7 @@ name: 'Contrast Security Azure Spring Cloud Deployment'
 description: 'Deploy an Azure Spring Cloud Application with a Contrast Security Agent'
 branding:
   icon: 'check-square'
-  color: 'gray-dark'
+  color: 'green'
 inputs:
   azure-credentials-file:
     description: 'The configuration file contents for Azure-specific logins, regions, etc...'
