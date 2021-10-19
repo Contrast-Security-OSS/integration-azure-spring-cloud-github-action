@@ -1,0 +1,45 @@
+name: 'Contrast Security Azure Spring Cloud Deployment'
+description: 'Deploy an Azure Spring Cloud Application with a Contrast Security Agent'
+branding:
+  icon: 'check-square'
+  color: 'gray-dark'
+inputs:
+  azure-credentials-file:
+    description: 'The configuration file contents for Azure-specific logins, regions, etc...'
+    required: true
+  contrast-security-credentials-file:
+    description: 'The configuration file contents for the Contrast Security Java Agent - used to communication with Contrast Security Team Server'
+    required: true
+  application-name:
+    description: 'Name of the application deployed to Azure Spring Cloud'
+    required: true
+  spring-cloud-service-name:
+    description: 'Azure Spring Cloud service name'
+    required: true
+  application-artifact-location:
+    description: 'Location of the deployable application artifact. Location relative to /github/workspace/'
+    required: false
+    default: '/target/*.jar'
+  application-jvm-options:
+    description: 'Deployable application jvm-options to pass to the Azure Spring Cloud PaaS deployment'
+    required: false
+  application-memory:
+    description: 'Memory allocated to application deployment'
+    required: false
+    default: '2'
+  application-instance-count:
+    description: 'Instance count allocated to application deployment'
+    required: false
+    default: '1'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.azure-credentials-file }}
+    - ${{ inputs.contrast-security-credentials-file }}
+    - ${{ inputs.application-name }}
+    - ${{ inputs.spring-cloud-service-name }}
+    - ${{ inputs.application-artifact-location }}
+    - ${{ inputs.application-jvm-options }}
+    - ${{ inputs.application-memory }}
+    - ${{ inputs.application-instance-count }}

@@ -1,0 +1,10 @@
+{
+  "name": "springone-puppeteer",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Mark Tomcza",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^10.2.0"
+  }
+}
