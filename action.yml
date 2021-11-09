@@ -1,4 +1,4 @@
-name: 'Contrast Security Azure Spring Cloud Deployment'
+name: 'Contrast Security Azure Spring Cloud Deploy'
 description: 'Deploy an Azure Spring Cloud Application with a Contrast Security Agent'
 branding:
   icon: 'check-square'
